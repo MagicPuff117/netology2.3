@@ -15,6 +15,10 @@ except IndexError:
 except ValueError:
     print('Условия должны быть в ввиде числа.')
 
+    class MyException(Exception):
+        pass
+
+
 try:
     if sign == '+':
         print(first_number + second_number)
@@ -25,8 +29,7 @@ try:
     elif sign == '/':
          print(first_number // second_number)
     else:
-        class MyException(Exception):
-            print('Не забываем ставить пробелы!')
+        raise MyException('Не забываем ставить пробелы!')
 except ZeroDivisionError:
     print('На ноль делить нельзя!')
 except NameError:
